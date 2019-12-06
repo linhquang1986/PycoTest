@@ -36,18 +36,27 @@ viewToMatrix = (matrix) => {
     })
     return viewMatrix
 }
+
+/**
+ * Limit loop time
+ */
+limitRotation = async(k) => {
+    return await(k % 4);
+}
 exports.rotatioMatrix = (req, res, next) => {
     try {
-        const numberOfRotation = req.params.K;
         let matrix = [
             [0, 16, 255],
             [8, 128, 32],
             [0, 0, 0]
         ];
-        for (let i = 0; i < numberOfRotation; i++) {
-            transpose(matrix);
-            reverseRows(matrix);
-        }
+        limitRotation(req.params.K).then(rs=>{
+            for (let i = 0; i < numberOfRotation; i++) {
+                transpose(matrix);
+                reverseRows(matrix);
+            }
+        });
+ 
         const data  = {
             "Data after rotation" : matrix,
             "View": viewToMatrix(matrix)
