@@ -1,0 +1,33 @@
+{
+  "name": "pyco-api",
+  "version": "1.0.0",
+  "description": "Do testing for Pyco",
+  "nodemonConfig": {
+    "watch": [
+      "server"
+    ],
+    "ext": "ts",
+    "ignore": [
+      "*.test.ts"
+    ],
+    "delay": "3",
+    "execMap": {
+      "ts": "ts-node"
+    }
+  },
+  "main": "cluster.js",
+  "scripts": {
+    "start": "node cluster.js",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Quang Nguyen",
+  "license": "ISC",
+  "dependencies": {
+    "cors": "^2.8.5",
+    "dotenv": "^8.2.0",
+    "express": "^4.16.4"
+  },
+  "devDependencies": {
+    "nodemon": "^2.0.1"
+  }
+}
