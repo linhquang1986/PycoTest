@@ -17,3 +17,7 @@ Method post: http://localhost:8000/api/pyco/getStatusRoom <br>
 - **parameter _departures**: 2,6,10<br>
 - **parameter K** :1 <br>
 ![Screenshot](https://user-images.githubusercontent.com/13268141/70310362-03ddd800-1842-11ea-8209-1588bc4085bb.png)
+
+## Run tests
+1/ cd to PycoTest<br>
+2/ npm test<br>
