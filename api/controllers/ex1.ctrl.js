@@ -50,7 +50,7 @@ exports.rotatioMatrix = (req, res, next) => {
             [8, 128, 32],
             [0, 0, 0]
         ];
-        limitRotation(req.params.K).then(rs=>{
+        limitRotation(req.params.K).then(numberOfRotation => {
             for (let i = 0; i < numberOfRotation; i++) {
                 transpose(matrix);
                 reverseRows(matrix);
