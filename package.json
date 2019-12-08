@@ -18,7 +18,7 @@
   "main": "cluster.js",
   "scripts": {
     "start": "node cluster.js",
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "SET NODE_ENV=test && mocha ./test/*.spec.js --timeout 5000"
   },
   "author": "Quang Nguyen",
   "license": "ISC",
@@ -28,6 +28,9 @@
     "express": "^4.16.4"
   },
   "devDependencies": {
-    "nodemon": "^2.0.1"
+    "chai": "^4.2.0",
+    "mocha": "^6.2.2",
+    "nodemon": "^2.0.1",
+    "supertest": "^4.0.2"
   }
 }
