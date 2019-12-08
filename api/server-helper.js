@@ -13,11 +13,6 @@ app.use(bodyParser.json());
 // mount api routes
 app.use('/api', routes);
 const HTTP_PORT = process.env.PORT || 8000
-const server =  app.listen(HTTP_PORT, () => {
-    //don't show the log when it is test
-    if(process.env.NODE_ENV !== 'test') {
-        console.log('Worker', process.env.id, "listening on port %PORT%".replace("%PORT%", HTTP_PORT));
-    }
-});
+const server =  app.listen(HTTP_PORT);
 
 module.exports = server;
